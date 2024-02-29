@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        body {
+    font-family: 'Shadows Into Light', cursive;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+    margin: 50px;
+    background-color: #333;
+    background-image: url(https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=600);
+    background-size: cover;
+    background-position: center;
+  }
+
+        #calculator{
+            background-color:rgb(109, 114, 108);
+            display:flex;
+            flex-direction: column;
+            align-items:center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 3cm;
+            opacity:0.5;
+        }
+        #text {
+            text-align: left;
+            width:70%;
+            font-size:1.5cm;
+            text-decoration: wavy;
+        }
+        .row {
+                display: flex;
+            }
+    
+        .calc {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: none;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            background-color: #000;
+            color:aliceblue;
+            }
+            .calc:hover {
+                background-color: #0b0a0a;
+            }
+    
+            #display-container {
+            background-color:#0f0e0e; 
+            width: 300px;
+            height: 70px;
+            margin: 20px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+          #display {
+                font-size: 24px;
+                border: none;
+                background: none;
+                outline: none;
+                flex: 1;
+                color:aliceblue;
+            }
+            .c{
+                text-align: center;
+                color:#000;
+                opacity:1.0;
+            }
+    </style>
+</head>
+<body>
+    <div id="text">
+    <h1>Unlocking the </h1>
+    <h1>Secrets of numbers!</h1>
+    </div>
+    <div id="calculator">
+        <h1 class="c">Calculator</h1>
+        <div id="display-container">
+            <input type="text" id="display" disabled>
+        </div>
+        <div class="row">
+            <button class="calc" onclick="insertVal(7)">7</button>
+            <button class="calc" onclick="insertVal(8)">8</button>
+            <button class="calc" onclick="insertVal(9)">9</button>
+            <button class="calc" onclick="clearDisplay()">C</button>
+        </div>
+        <div class="row">
+            <button class="calc" onclick="insertVal(4)">4</button>
+            <button class="calc" onclick="insertVal(5)">5</button>
+            <button class="calc" onclick="insertVal(6)">6</button>
+            <button class="calc" onclick="insertval('*')">*</button>
+        </div>
+        <div class="row">
+            <button class="calc" onclick="insertVal(1)">1</button>
+            <button class="calc" onclick="insertVal(2)">2</button>
+            <button class="calc" onclick="insertVal(3)">3</button>
+            <button class="calc" onclick="insertVal('-')">-</button>
+        </div>
+        <div class="row">
+            <button class="calc" onclick="insertVal('.')">.</button>
+            <button class="calc" onclick="insertVal(0)">0</button>
+            <button class="calc" onclick="insertVal('/')">/</button>
+            <button class="calc" onclick="insertVal('+')">+</button>
+        </div>
+        <div class="row">
+            <button class="calc" onclick="calculate()">Ans </button>
+        </div>
+    </div>
+    <script>
+        function insertVal(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                let result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+                alert("Invalid");
+            }
+        }
+    </script> 
+</body>
+</html>
