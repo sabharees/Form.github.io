@@ -26,14 +26,16 @@
             flex-direction: column;
             align-items:center;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-top: 3cm;
+            margin-top: 1cm;
+            margin-right:3cm;
             opacity:0.5;
         }
         #text {
             text-align: left;
             width:70%;
-            font-size:1.5cm;
+            font-size:1.75cm;
             text-decoration: wavy;
+            margin-left:3cm;
         }
         .row {
                 display: flex;
@@ -80,6 +82,10 @@
                 text-align: center;
                 color:#000;
                 opacity:1.0;
+            }
+            @media screen and (max-width: 768px) {
+            #calculator {
+                width: 90%;
             }
     </style>
 </head>
